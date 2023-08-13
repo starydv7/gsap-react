@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import "./home.css";
 const Feature = ({ heading, content, imageSrc, revealFrom }) => (
   <div className={`feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone`}>
     <div className={`featured-image-container ipsGrid_span5 gs_reveal ${revealFrom}`}>
@@ -43,22 +43,22 @@ const Home = () => {
   const animateFrom = (elem, direction = 1) => {
     direction = direction || 1;
     let x = 0,
-      y = direction * 250;
+      y = direction * 100;
     if (elem.classList.contains("gs_reveal_fromLeft")) {
-      x = -250;
+      x = -100;
       y = 0;
     } else if (elem.classList.contains("gs_reveal_fromRight")) {
-      x = 250;
+      x = 100;
       y = 0;
     }
     elem.style.transform = `translate(${x}px, ${y}px)`;
-    elem.style.opacity = "1";
+    elem.style.opacity = "0";
     gsap.fromTo(
       elem,
       { x: x, y: y, autoAlpha: 0 },
       {
-        duration: 2.25,
-        x: 50,
+        duration: 1.25,
+        x: 0,
         y: 0,
         autoAlpha: 1,
         ease: "expo",
@@ -151,7 +151,7 @@ const Home = () => {
           imageSrc="https://picsum.photos/479/479?index=1"
           revealFrom="gs_reveal_fromLeft"
         />
-
+        
 
         {/* More Feature components here */}
       </div>

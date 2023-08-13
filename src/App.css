@@ -1,5 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .App{
   background-color: crimson;
   height: 100%;
   width: 100%;
+}
+.content-wrapper {
+  padding-top: 60px; 
 }
