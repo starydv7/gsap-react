@@ -43,13 +43,13 @@ const Home = () => {
   const animateFrom = (elem, direction = 1) => {
     direction = direction || 1;
     let x = 0,
-      y = direction * 100;
+      y = direction * 500;
     if (elem.classList.contains("gs_reveal_fromLeft")) {
       x = -100;
       y = 0;
     } else if (elem.classList.contains("gs_reveal_fromRight")) {
       x = 100;
-      y = 0;
+      y = 100;
     }
     elem.style.transform = `translate(${x}px, ${y}px)`;
     elem.style.opacity = "0";

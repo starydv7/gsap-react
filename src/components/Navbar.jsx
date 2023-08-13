@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 
@@ -20,6 +23,25 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleFixed);
     };
   }, []); // Add an empty dependency array to ensure the event listener is set up only once
+  
+  // useEffect(() => {
+  //   // Initialize GSAP and ScrollTrigger
+  //   gsap.registerPlugin(ScrollTrigger);
+    
+  //   const showAnim = gsap.from('nav', {
+  //     yPercent: -100,
+  //     paused: true,
+  //     duration: 0.2
+  //   }).progress(1);
+    
+  //   ScrollTrigger.create({
+  //     start: 'top top',
+  //     end: 99999,
+  //     onUpdate: (self) => {
+  //       self.direction === -1 ? showAnim.play() : showAnim.reverse();
+  //     }
+  //   });
+  // }, []); 
 
   return (
     <nav className={fix ? 'nav fixed' : 'nav'}>
